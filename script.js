@@ -21,3 +21,43 @@ less.addEventListener("click", () => {
     number.innerHTML = count;
   }
 });
+
+const input = document.querySelector(".input[name = text]");
+input.addEventListener("keydown", () => {
+  let letter = document.querySelector(".lettercounter");
+  letter.innerHTML = input.value.length;
+});
+
+const HTML = document.querySelector(".html");
+const CSS = document.querySelector(".css");
+const JS = document.querySelector(".js");
+
+JS.addEventListener("click", () => {
+  if (
+    (JS.style.border = "none") &&
+    (CSS.style.border = "none") &&
+    (HTML.style.border = "none")
+  ) {
+    HTML.style.border = "1px solid orangered";
+  } else {
+    JS.style.border = "none";
+    HTML.style.border = "none";
+    CSS.style.border = "none";
+  }
+});
+
+HTML.addEventListener("click", () => {
+  if ((JS.style.border = "none")) {
+    CSS.style.border = "1px solid blue";
+  } else {
+    JS.style.border = "none";
+  }
+});
+
+CSS.addEventListener("click", () => {
+  if ((HTML.style.border = "none")) {
+    JS.style.border = "1px solid orange";
+  } else {
+    HTML.style.border = "none";
+  }
+});
