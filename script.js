@@ -61,3 +61,23 @@ CSS.addEventListener("click", () => {
     HTML.style.border = "none";
   }
 });
+
+//guess number
+
+let mysteryNumber = Math.floor(Math.random() * 99);
+let playerGuess = 0;
+let $input = document.querySelector("#in");
+let output = document.querySelector("#output");
+var bouton = document.querySelector(".bouton");
+
+bouton.addEventListener("click", () => {
+  playerGuess = parseInt($input.value);
+
+  if (playerGuess > mysteryNumber) {
+    output.innerHTML = "c'est moins que" + " " + playerGuess;
+  } else if (playerGuess < mysteryNumber) {
+    output.innerHTML = "c'est plus que" + " " + playerGuess;
+  } else {
+    output.innerHTML = "tu as trouvé";
+  }
+});
